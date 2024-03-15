@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+  font-size: 14px;
+  line-height: 1.4;
+  /* background-color: rgb(7, 7, 7); */
+  margin: 0;
+  padding: 0;
+  /* background: radial-gradient(circle, #ff6b6b, #3a1c71);
+  transition: background 0.8s ease-out, box-shadow 0.5s ease-out;
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.5); Glow effect */
+
+    /* The image used */
+    background-image: url("./images/v960-ning-05.jpg");
+  
+  
+  /* Set up the background to cover the whole page */
+  height: 100%;
+  width: 100%;
+
+  /* Ensure the image covers the full container, without being tiled or positioned incorrectly */
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+.background {
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #ff6b6b, #3a1c71);
+  transition: background 0.8s ease-out, box-shadow 0.5s ease-out;
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.5); Glow effect */
+}
+.chat-box {
+  height: 350px;
+  overflow: auto;
+  padding: 10px;
+}
+
+.chat-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #E3E4FA; /* A complementary soft color */
+  /* border: none; */
+  /* border-radius: 15px; */
+  /* padding: 15px; */
+  width: 100%;
+  box-sizing: border-box; 
+}
+.message-box {
+  background-color: #E3E4FA; /* A complementary soft color */
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.chat-message {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-message,
+.bot-message {
+  border-radius: 20px; /* More pronounced border radius */
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.user-message {
+  background-color: #9C9ED9; /* Lighter color for user message */
+  color: #fff;
+  font-size: 16px; /* Adjust font size for better readability */
+}
+
+.bot-message {
+  background-color: #7C7F9B; /* Different shade for bot message */
+  color: white;
+  font-size: 16px;
+}
+
+.message-text pre code {
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+
+.user-icon {
+  font-size: 20px;
+  margin-right: 10px;  
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.bot-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+h1 {
+  font-family: 'Poppins', sans-serif; /* Specify Poppins for heading */
+  color: #726AE3 !important; /* The specified blue color, marked as important */
+  font-size: 35px; /* Set font size to 35px */
+  font-weight:700;
+  text-transform:capitalize;
+  line-height: 1.2;
+}
+
+/* //////////////// */
+/* Message box styling */
+
+/* Send button styling */
+#send-btn {
+  background-color: #726AE3; /* Same color as the heading */
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+  display: inline-block; /* To enable the use of margin */
+  margin-top: 10px;
+}
+
+#send-button:hover {
+  background-color: #5A5D9F; /* Darken button color on hover */
+}
+
