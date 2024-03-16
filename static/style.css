@@ -136,7 +136,27 @@ h1 {
   display: inline-block; /* To enable the use of margin */
   margin-top: 10px;
 }
+.button-div{
+  display: flex; /* This will align your buttons side by side */
+  justify-content: center; /* This will center the buttons in the div */
+  gap: 10px; /* This adds some space between your buttons */
+}
 
+
+.send-btn {
+  background-color: #726AE3; /* Same color as the heading */
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+  display: inline-block; /* To enable the use of margin */
+  margin-top: 10px;
+  width:50%;
+}
 #send-button:hover {
   background-color: #5A5D9F; /* Darken button color on hover */
 }

@@ -24,13 +24,20 @@
     <div class="chat-box mt-3">
       <!-- Chat messages will be added here dynamically -->
     </div>
+   
+
     <div class="form-group mt-3">
       <textarea class="form-control message-box" rows="3" placeholder="Send a message to viZen" id="message-input"></textarea>
     </div>
-    <button type="button" class="btn btn-primary message-box" id="send-btn">Send</button>
+    <div class="button-div">
+      <button type="button" id="start-recognition" class="send-btn">Speak Up!</button>
+      <button type="button" class="btn btn-primary message-box send-btn" id="send-btn">Send</button>
+    </div>
+   
   </div>
 </div>
   <script>
+    
 setInterval(highlightAll,1000);
 // Function to highlight code using highlight.js library
 function highlightAll() {
@@ -63,7 +70,37 @@ function highlightAll() {
     }
 
 
+    function speakMessage(message) {
+  const synth = window.speechSynthesis;
+  const utterance = new SpeechSynthesisUtterance(message);
+  utterance.pitch = 1; // Can be between 0 and 2
+  utterance.rate = 1; // Can be between 0.1 (slowest) and 10 (fastest), 1 is the default.
 
+  // This function will be called to set the voice after a short delay
+  function setVoiceAndSpeak() {
+    const voices = synth.getVoices();
+    console.log(voices);
+
+    // Look for the 'Microsoft Zira Desktop - English (United States)' voice; if not found, fallback
+    const ziraVoice = voices.find(voice => voice.name === 'Microsoft Zira Desktop - English (United States)') ||
+                      voices.find(voice => voice.name.includes('Zira')) ||
+                      voices.find(voice => voice.lang === 'en-US' && voice.gender === 'female') ||
+                      voices[0]; // Default to the first voice if Zira is not found
+
+    utterance.voice = ziraVoice;
+
+    // Speak the message
+    synth.speak(utterance);
+  }
+
+  // Use setTimeout to allow the voice list to be loaded asynchronously
+  if (synth.getVoices().length === 0) {
+    synth.onvoiceschanged = setVoiceAndSpeak;
+  } else {
+    setVoiceAndSpeak();
+  }
+}
+                
 
     function sendMessage() {
       const message = messageInput.value.trim();
@@ -86,7 +123,8 @@ function highlightAll() {
             messageDiv.classList.add("bot-message");
            
             const content = data.content;
-            
+            console.log(content);
+            speakMessage(content);
             // Check if the content has code block
             const hasCodeBlock = content.includes("```");
             if (hasCodeBlock) {
@@ -116,6 +154,35 @@ function highlightAll() {
         sendMessage();
       }
     });
+    if ('webkitSpeechRecognition' in window) {
+    var recognition = new webkitSpeechRecognition();
+
+    recognition.continuous = false; // Stop automatically after the user stops speaking
+    recognition.interimResults = false; // We don't want interim results
+
+    // When speech recognition has a result
+    recognition.onresult = function(event) {
+        var transcript = event.results[0][0].transcript; // Get the recognized text
+        var inputField = document.getElementById('message-input');
+        inputField.value = transcript; // Set the recognized text in the input field
+    };
+
+    // Start speech recognition when the "Start Recognition" button is clicked
+    document.getElementById('start-recognition').addEventListener('click', function() {
+        recognition.start();
+    });
+
+    // Handle the "Send" button click
+    document.getElementById('send-message').addEventListener('click', function() {
+        var message = document.getElementById('message-input').value;
+
+        // Code to send the message to the server and get the chatbot response...
+        // (Your existing AJAX code to POST to the /api endpoint goes here)
+    });
+
+} else {
+    alert('Speech recognition is not supported in this browser.');
+}
   </script>
 </body>
 
