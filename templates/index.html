@@ -12,13 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <title>viZen</title>
+<!-- Bootstrap CSS CDN Link -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap.min.css') }}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css.map') }}">
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/templatemo-digimedia-v1.css') }}">
@@ -51,26 +52,7 @@ https://templatemo.com/tm-568-digimedia
   <!-- ***** Preloader End ***** -->
 
   <!-- Pre-header Starts -->
-  <div class="pre-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-sm-8 col-7">
-          <ul class="info">
-            <li><a href="#"><i class="fa fa-envelope"></i>digimedia@company.com</a></li>
-            <li><a href="#"><i class="fa fa-phone"></i>010-020-0340</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-4 col-sm-4 col-5">
-          <ul class="social-media">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-behance"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  
   <!-- Pre-header End -->
 
   <!-- ***** Header Area Start ***** -->
@@ -80,19 +62,17 @@ https://templatemo.com/tm-568-digimedia
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <a href="index.html" class="logo">
-              <img src="./assets/images/logo-v1.png" alt="">
-            </a>
+            <li class="scroll-to-section"><a href="#" class="logo">viZen</a></li>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
               <li class="scroll-to-section"><a href="#about">About</a></li>
               <li class="scroll-to-section"><a href="#services">Services</a></li>
-              <li class="scroll-to-section"><a href="#portfolio">Projects</a></li>
+              
               <li class="scroll-to-section"><a href="#blog">Blog</a></li>
-              <li class="scroll-to-section"><a href="#contact">Contact</a></li> 
-              <li class="scroll-to-section"><div class="border-first-button"><a href="#contact">Connect</a></div></li> 
+              
+              <li class="scroll-to-section"><div class="border-first-button"><a href="/chatbot">Connect</a></div></li> 
             </ul>        
             <a class='menu-trigger'>
                 <span>Menu</span>
@@ -128,7 +108,7 @@ https://templatemo.com/tm-568-digimedia
             </div>
             <div class="col-lg-6">
               <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <img src="./assets/images/slider-dec.png" alt="">
+                <img src="{{ url_for('static', filename='assets/images/mental.png') }}" alt="">
               </div>
             </div>
           </div>
@@ -144,7 +124,7 @@ https://templatemo.com/tm-568-digimedia
           <div class="row">
             <div class="col-lg-6">
               <div class="about-left-image  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
-                <img src="./assets/images/about-dec.png" alt="">
+                <img src="{{ url_for('static', filename='assets/images/image.png') }}" alt="">
               </div>
             </div>
             <div class="col-lg-6 align-self-center  wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
@@ -174,7 +154,7 @@ https://templatemo.com/tm-568-digimedia
                       </div>
                     </div>
                     </div>
-                  </div>
+                
                   <div class="col-lg-4 col-sm-4">
                     <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
                       <div class="progress" data-percentage="80">
@@ -212,6 +192,7 @@ https://templatemo.com/tm-568-digimedia
                     </div>
                   </div>
                 </div> 
+                </div>
               </div>
             </div>
           </div>
@@ -238,31 +219,31 @@ https://templatemo.com/tm-568-digimedia
                   <div class="menu">
                     <div class="first-thumb active">
                       <div class="thumb">
-                        <span class="icon"><img src="./assets/images/service-icon-01.png" alt=""></span>
+                        <span class="icon"><img src="{{ url_for('static', filename='assets/images/personal.png') }}" alt=""></span>
                         Personalized Advice
                       </div>
                     </div>
                     <div>
                       <div class="thumb">                 
-                        <span class="icon"><img src="./assets/images/service-icon-02.png" alt=""></span>
+                        <span class="icon"><img src="{{ url_for('static', filename='assets/images/emotional.png') }}" alt=""></span>
                         Emotional Support
                       </div>
                     </div>
                     <div>
                       <div class="thumb">                 
-                        <span class="icon"><img src="./assets/images/service-icon-03.png" alt=""></span>
+                        <span class="icon"><img src="{{ url_for('static', filename='assets/images/counselling (1).jpeg') }}" alt=""></span>
                         Counseling Services:
                       </div>
                     </div>
                     <div>
                       <div class="thumb">                 
-                        <span class="icon"><img src="./assets/images/service-icon-04.png" alt=""></span>
+                        <span class="icon"><img src="{{ url_for('static', filename='assets/images/confidentiality (1).jpeg') }}" alt=""></span>
                         Confidentiality Assurance
                       </div>
                     </div>
                     <div class="last-thumb">
                       <div class="thumb">                 
-                        <span class="icon"><img src="./assets/images/service-icon-01.png" alt=""></span>
+                        <span class="icon"><img src="{{ url_for('static', filename='assets/images/access.png') }}" alt=""></span>
                         Accessible Support
                       </div>
                     </div>
@@ -284,7 +265,7 @@ https://templatemo.com/tm-568-digimedia
                             </div>
                             <div class="col-lg-6 align-self-center">
                               <div class="right-image">
-                                <img src="././assets/images/services-image.jpg" alt="">
+                                <img src="{{ url_for('static', filename='assets/images/personal.png') }}" alt="">
                               </div>
                             </div>
                           </div>
@@ -306,7 +287,7 @@ https://templatemo.com/tm-568-digimedia
                             </div>
                             <div class="col-lg-6 align-self-center">
                               <div class="right-image">
-                                <img src="./assets/images/services-image-02.jpg" alt="">
+                                <img src="{{ url_for('static', filename='assets/images/emotional.png') }}" alt="">
                               </div>
                             </div>
                           </div>
@@ -328,7 +309,7 @@ https://templatemo.com/tm-568-digimedia
                             </div>
                             <div class="col-lg-6 align-self-center">
                               <div class="right-image">
-                                <img src="./assets/images/services-image-03.jpg" alt="">
+                                <img src="{{ url_for('static', filename='assets/images/counselling (1).jpeg') }}" alt="">
                               </div>
                             </div>
                           </div>
@@ -350,7 +331,7 @@ https://templatemo.com/tm-568-digimedia
                             </div>
                             <div class="col-lg-6 align-self-center">
                               <div class="right-image">
-                                <img src="./assets/images/services-image-04.jpg" alt="">
+                                <img src="{{ url_for('static', filename='assets/images/confidentiality (1).jpeg') }}" alt="">
                               </div>
                             </div>
                           </div>
@@ -372,7 +353,7 @@ https://templatemo.com/tm-568-digimedia
                             </div>
                             <div class="col-lg-6 align-self-center">
                               <div class="right-image">
-                                <img src="./assets/images/services-image.jpg" alt="">
+                                <img src="{{ url_for('static', filename='assets/images/access.png') }}" alt="">
                               </div>
                             </div>
                           </div>
@@ -407,24 +388,23 @@ https://templatemo.com/tm-568-digimedia
       <div class="row">
         <div class="col-lg-4 offset-lg-4  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s">
           <div class="section-heading">
-            <h6>Recent News</h6>
-            <h4>Check Our Blog <em>Posts</em></h4>
+            <h6>News</h6>
+            <h4>Check Out Interesting<em>Blogs</em></h4>
             <div class="line-dec"></div>
           </div>
         </div>
         <div class="col-lg-6 show-up wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
           <div class="blog-post">
             <div class="thumb">
-              <a href="#"><img src="./assets/images/blog-post-01.jpg" alt=""></a>
+              <a href="https://thereachinstitute.org/racism-as-trauma-pediatric-mental-health/"><img src="{{ url_for('static', filename='assets/images/Racism-as-Trauma-2048x1510.jpeg') }}" alt=""></a>
             </div>
             <div class="down-content">
-              <span class="category">SEO Analysis</span>
-              <span class="date">03 August 2021</span>
-              <a href="#"><h4>Lorem Ipsum Dolor Sit Amet, Consectetur Adelore
-                Eiusmod Tempor Incididunt</h4></a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doers itii eiumod deis tempor incididunt ut labore.</p>
-              <span class="author"><img src="./assets/images/author-post.jpg" alt="">By: Andrea Mentuzi</span>
-              <div class="border-first-button"><a href="#">Discover More</a></div>
+              <span class="category">Mental Health</span>
+              <span class="date">15 February 2024</span>
+              <a href="https://thereachinstitute.org/racism-as-trauma-pediatric-mental-health/"><h4>Racism as trauma: A pediatric mental health perspective</h4></a>
+              <p>The impact of racial discrimination as an Adverse Childhood Experience, and its relationship to other ACEs, is only recently beginning to receive attention and research.</p>
+              
+              <div class="border-first-button"><a href="https://thereachinstitute.org/racism-as-trauma-pediatric-mental-health/"> Discover More</a></div>
             </div>
           </div>
         </div>
@@ -434,46 +414,47 @@ https://templatemo.com/tm-568-digimedia
               <div class="col-lg-12">
                 <div class="post-item">
                   <div class="thumb">
-                    <a href="#"><img src="./assets/images/blog-post-02.jpg" alt=""></a>
+                    <a href="https://greaterthanillness.com/2020/02/19/how-to-explain-depression-to-those-you-love/"><img src="{{ url_for('static', filename='assets/images/howtotell.png') }}" alt=""></a>
                   </div>
                   <div class="right-content">
-                    <span class="category">SEO Analysis</span>
-                    <span class="date">24 September 2021</span>
-                    <a href="#"><h4>Lorem Ipsum Dolor Sit Amei Eiusmod Tempor</h4></a>
-                    <p>Lorem ipsum dolor sit amet, cocteturi adipiscing eliterski.</p>
+                    <span class="category">Mental Health</span>
+                    <span class="date">19 February 2020</span>
+                    <a href="https://greaterthanillness.com/2020/02/19/how-to-explain-depression-to-those-you-love/"><h4>How to Explain Depression to Those You Love</h4></a>
+                    <p>Whether you have struggled with depression for four months or forty years, I can guarantee you already know one thing: depression is fickle, depression is complicated, and it is the nearly impossible to describe.</p>
                   </div>
                 </div>
               </div>
               <div class="col-lg-12">
                 <div class="post-item">
                   <div class="thumb">
-                    <a href="#"><img src="./assets/images/blog-post-03.jpg" alt=""></a>
+                    <a href="https://anxiouslass.com/hobbies-for-mental-health/"><img src="{{ url_for('static', filename='assets/images/hobbies (1).png') }}" alt=""></a>
                   </div>
                   <div class="right-content">
-                    <span class="category">SEO Analysis</span>
-                    <span class="date">24 September 2021</span>
-                    <a href="#"><h4>Lorem Ipsum Dolor Sit Amei Eiusmod Tempor</h4></a>
-                    <p>Lorem ipsum dolor sit amet, cocteturi adipiscing eliterski.</p>
+                    <span class="category">Mental Health</span>
+                    <span class="date">16 January 2023</span>
+                    <a href="https://anxiouslass.com/hobbies-for-mental-health/"><h4>11 GRATIFYING HOBBIES FOR MENTAL HEALTH</h4></a>
+                    <p>When we talk about self-care, we think about it as this luxury piece of time that we have to carve out every single day.
+
+                      It’s drummed into us that we should be taking long soaks in a lavender bath and having time to rest and while yes, that would be nice, it’s not the only form of self care and frankly it doesn’t work for everyone..</p>
                   </div>
                 </div>
               </div>
               <div class="col-lg-12">
                 <div class="post-item last-post-item">
                   <div class="thumb">
-                    <a href="#"><img src="./assets/images/blog-post-04.jpg" alt=""></a>
+                    <a href="https://anxiouslass.com/social-anxiety-really-feels-like/"><img src="{{ url_for('static', filename='assets/images/anxiety.png') }}" alt=""></a>
                   </div>
                   <div class="right-content">
-                    <span class="category">SEO Analysis</span>
-                    <span class="date">24 September 2021</span>
-                    <a href="#"><h4>Lorem Ipsum Dolor Sit Amei Eiusmod Tempor</h4></a>
-                    <p>Lorem ipsum dolor sit amet, cocteturi adipiscing eliterski.</p>
+                    <span class="category">Mental Health</span>
+                    <span class="date">13 February 2017</span>
+                    <a href="https://anxiouslass.com/social-anxiety-really-feels-like/"><h4>WHAT SOCIAL ANXIETY REALLY FEELS LIKE</h4></a>
+                    <p>So you’ve been diagnosed with a Social Anxiety Disorder and you quickly realise how many people just think you’re “a bit shy” or using it as an excuse or even using it to get sympathy or attention. Does that sound about right? That’s if you’ve even told anyone you have it of course because let’s face it, that’s not an easy thing to do when you have social anxiety.</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
     </div>
   </div>  
 
@@ -484,8 +465,12 @@ https://templatemo.com/tm-568-digimedia
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright © viZen, Ltd. All Rights Reserved. 
-          
+          <p>        If you or someone you know is in need, visit Nimhans.ac.in/pssmhs-helpline today!
+
+          </p>
+            <p>Copyright © viZen, Ltd. All Rights Reserved. 
+            </p>
+         
         </div>
       </div>
     </div>
