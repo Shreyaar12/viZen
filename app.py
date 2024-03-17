@@ -5,6 +5,7 @@ import openai
 app = Flask(__name__)
 
 # Set up OpenAI API credentials
+openai.api_key = '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'
 
 @app.route("/")
 def home():
@@ -51,5 +52,5 @@ Talk like an actual big sister like they're your sibling sand give them human li
     
 
 if __name__=='__main__':
-    app.run()
-
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8080)
