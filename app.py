@@ -1,10 +1,23 @@
 from flask import Flask, render_template, request
 import openai
 
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Now you can use os.getenv to read the environment variables
+secret_key = os.getenv('SECRET_KEY')
+
+app = Flask(__name__)
+
+# Rest of your Flask app code...
 
 app = Flask(__name__)
 
 # Set up OpenAI API credentials
+openai.api_key = secret_key
 
 @app.route("/")
 def home():
