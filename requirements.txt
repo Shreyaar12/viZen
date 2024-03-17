@@ -1,5 +1,5 @@
 flask
-openai
-waitress
+openai==0.28.0
+waitress==3.0.0
 dotenv
 os
